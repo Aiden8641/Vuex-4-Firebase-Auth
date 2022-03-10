@@ -5,4 +5,6 @@ import router from './router'
 // global styles
 import './assets/main.css'
 
-createApp(App).use(router).mount('#app')
+//import store 
+import store from './store/index.js'
+createApp(App).use(router).use(store).mount('#app')
