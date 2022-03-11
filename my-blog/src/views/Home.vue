@@ -1,9 +1,9 @@
 <template>
   <div class="home">
     <!-- vuex basics -->
-    <div>points: {{ points }}</div>
+    <!-- <div>points: {{ points }}</div>
     <button @click="updatePoints(1)">add a point</button>
-    <button @click="updatePoints(-1)">remove a point</button>
+    <button @click="updatePoints(-1)">remove a point</button> -->
     <div v-for="blog in blogs" :key="blog.id">
       <div class="blog">
         <h3>{{ blog.title }}</h3>
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { ref, computed } from "vue";
+import { ref /* computed */ } from "vue";
 import { useStore } from "vuex";
 
 export default {
@@ -35,16 +35,18 @@ export default {
       { title: "Mario vs Luigi, Ultimate Showdown", id: 3 },
     ]);
     const store = useStore();
+    console.log(store.state.user);
+    /* store.commit("setUser", "yoshi"); */
 
-    const points = computed(() => store.state.points);
+    /* const points = computed(() => store.state.points);
 
     const updatePoints = (p) => {
       store.commit("updatePoints", p);
-    };
+    }; */
     return {
       blogs,
-      points,
-      updatePoints,
+      /* points,
+      updatePoints, */
     };
   },
 
