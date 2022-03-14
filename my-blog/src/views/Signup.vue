@@ -43,7 +43,7 @@ export default {
       }); */
     };
 
-    return { handleSubmit, email, password };
+    return { handleSubmit, email, password, error };
   },
 };
 </script>
